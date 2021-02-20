@@ -9,12 +9,22 @@ def decimal_to_binary(decimal_number):
     print(binary_list)
 
 
-decimal_to_binary(13)
+# decimal_to_binary(13)
 
 
 def binary_to_decimal(binary_digits):
-    """Returns the decimal (number) representation of a binary number represented by an array of 0/1 digits"""
-    pass
+    times = 0
+    decimal_number = 0
+    for digit in reversed(binary_digits):
+        if digit == 1:
+            decimal_number += (digit * (2**times))
+        else:
+            pass
+        times += 1
+    print(decimal_number)
+
+
+binary_to_decimal([1, 1, 0, 0, 1])
 
 
 def decimal_to_base(decimal_number, destination_base):
