@@ -48,12 +48,22 @@ def decimal_to_base(decimal_number, destination_base):
     print(base_list)
 
 
-decimal_to_base(0, 2)
+# decimal_to_base(13, 2)
 
 
 def base_to_decimal(digits, original_base):
-    """Returns the decimal (number) representation of an array of digits given in original_base"""
-    pass
+    times = 0
+    decimal_number = 0
+    for digit in reversed(digits):
+        # if digit == :
+        decimal_number += (digit * (original_base**times))
+        # else:
+        #     pass
+        times += 1
+    print(decimal_number)
+
+
+base_to_decimal([2, 4], 8)
 
 
 def digits_as_string(digits, base):
