@@ -1,15 +1,26 @@
 
 def decimal_to_binary(decimal_number):
     binary_list = []
-    while decimal_number > 0:
-        binary_number = decimal_number % 2
-        binary_list.append(binary_number)
-        decimal_number //= 2
-    binary_list.reverse()
+    if decimal_number > 0:
+        while decimal_number > 0:
+            binary_number = decimal_number % 2
+            binary_list.append(binary_number)
+            decimal_number //= 2
+        binary_list.reverse()
+    elif decimal_number < 0:
+        decimal_number = abs(decimal_number)
+        while decimal_number > 0:
+            binary_number = decimal_number % 2
+            binary_list.append(binary_number)
+            decimal_number //= 2
+        binary_list.reverse()
+        binary_list = "-" + str(binary_list)
+    else:
+        binary_list = [0]
     print(binary_list)
 
 
-# decimal_to_binary(13)
+decimal_to_binary(13)
 
 
 def binary_to_decimal(binary_digits):
@@ -24,12 +35,20 @@ def binary_to_decimal(binary_digits):
     print(decimal_number)
 
 
-binary_to_decimal([1, 1, 0, 0, 1])
+# binary_to_decimal([1, 1, 0, 0, 1])
 
 
 def decimal_to_base(decimal_number, destination_base):
-    """Returns the digits in destination_base representation of the decimal number"""
-    pass
+    base_list = []
+    while decimal_number > 0:
+        base_number = decimal_number % destination_base
+        base_list.append(base_number)
+        base_number //= destination_base
+    base_list.reverse()
+    print(base_list)
+
+
+# decimal_to_base(20, 4)
 
 
 def base_to_decimal(digits, original_base):
