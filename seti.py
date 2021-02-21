@@ -55,20 +55,26 @@ def base_to_decimal(digits, original_base):
     times = 0
     decimal_number = 0
     for digit in reversed(digits):
-        # if digit == :
         decimal_number += (digit * (original_base**times))
-        # else:
-        #     pass
         times += 1
     print(decimal_number)
 
 
-base_to_decimal([2, 4], 8)
+# base_to_decimal([2, 4], 8)
 
-
+# Returns the string representation of an array of digits given in base
 def digits_as_string(digits, base):
-    """Returns the string representation of an array of digits given in base"""
-    pass
+    for digit in digits:
+        if digit > base:
+            raise ValueError
+    digits = ['A' if num == 10 else 'B' if num == 11 else 'C' if num == 12 else 'D' if num == 13 else 'E' if num == 14 else 'F' if num == 15 else num for num in digits]
+    if base > 16:
+        raise ValueError
+    string_digits = ''.join(str(digit) for digit in digits)
+    print(string_digits)
+
+
+digits_as_string([2, 15, 9, 11], 16)
 
 
 def convert_base(original_digits, original_base, destination_base):
