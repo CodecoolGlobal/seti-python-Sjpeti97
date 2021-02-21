@@ -95,4 +95,4 @@ def convert_base(original_digits, original_base, destination_base):
         print(base_list)
 
 
-convert_base([1, 1, 0, 1], 2, 8)
+convert_base([1, 1, 7], 8, 2)
