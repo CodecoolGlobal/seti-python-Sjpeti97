@@ -62,7 +62,6 @@ def base_to_decimal(digits, original_base):
 
 # base_to_decimal([2, 4], 8)
 
-# Returns the string representation of an array of digits given in base
 def digits_as_string(digits, base):
     for digit in digits:
         if digit > base:
@@ -74,9 +73,26 @@ def digits_as_string(digits, base):
     print(string_digits)
 
 
-digits_as_string([2, 15, 9, 11], 16)
+# digits_as_string([2, 15, 9, 11], 16)
 
 
 def convert_base(original_digits, original_base, destination_base):
-    """Conversion from any base to any other base"""
-    pass
+    times = 0
+    decimal_number = 0
+    if original_base == destination_base:
+        print(original_digits)
+    else:
+        for digit in reversed(original_digits):
+            decimal_number += (digit * (original_base**times))
+            times += 1
+        # decimal_number
+        base_list = []
+        while decimal_number > 0:
+            base_number = decimal_number % destination_base
+            base_list.append(base_number)
+            decimal_number //= destination_base
+        base_list.reverse()
+        print(base_list)
+
+
+convert_base([1, 1, 0, 1], 2, 8)
